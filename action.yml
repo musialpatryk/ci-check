@@ -5,7 +5,7 @@ inputs:
     description: 'JSON array of repositories and workflows to check (e.g., [{"owner": "org", "repo": "backend", "workflow": "ci-backend.yml"}, ...]).'
     required: true
   ref:
-    description: 'The branch reference to check (e.g., main or ${{ github.ref_name }}).'
+    description: 'The branch reference to check (e.g., main).'
     required: true
   token:
     description: 'GitHub Token with read access (secrets.GHA_PAT).'
