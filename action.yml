@@ -1,0 +1,15 @@
+name: 'CI Status Checker'
+description: 'Checks for the latest successful run of specified workflows across multiple external repositories on a given branch.'
+inputs:
+  repositories-to-check:
+    description: 'JSON array of repositories and workflows to check (e.g., [{"owner": "org", "repo": "backend", "workflow": "ci-backend.yml"}, ...]).'
+    required: true
+  ref:
+    description: 'The branch reference to check (e.g., main or ${{ github.ref_name }}).'
+    required: true
+  token:
+    description: 'GitHub Token with read access (secrets.GHA_PAT).'
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
